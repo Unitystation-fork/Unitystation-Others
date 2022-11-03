@@ -6,6 +6,7 @@
 ### Languages utilisés
 
 Shell .SH
+
 -------------
 
 ### Description du projet
@@ -19,6 +20,7 @@ En créant un raccourci bureau de l'executable
 Géré par l'équipe de développement de Unionrolistes
 Liste des contributeurs Credit.md 
 ![Licence.md](https://github.com/Unitystation-fork/Unitystation-Hub/blob/main/LICENSE)
+
 -------------
 
 ### But du projet / public cible
