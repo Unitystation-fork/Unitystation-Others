@@ -33,7 +33,7 @@ Pour l'utiliser, veuillez copier Unitystation.sh localement et l'exécuter en ta
 
 Open terminal
 ```shell
-wget  https://raw.githubusercontent.com/Unitystation-fork/Unitystation-Hub/main/UnityStationInstaller.sh -O ~/UnityStationInstaller.sh ; sudo chmod 750 ~/UnityStationInstaller.sh ; sudo ~/UnityStationInstaller.sh
+wget  https://raw.githubusercontent.com/Unitystation-fork/Unitystation-Others/blob/main/Installation-Script/UnityStationInstaller.sh -O ~/UnityStationInstaller.sh ; sudo chmod 750 ~/UnityStationInstaller.sh ; sudo ~/UnityStationInstaller.sh
 ```
 
 -------------
