@@ -1,0 +1,9 @@
+{
+    "bitrate": 2500,
+    "keyint_sec": 0,
+    "preset": "faster",
+    "profile": "main",
+    "rate_control": "CBR",
+    "tune": "film",
+    "use_bufsize": false
+}
