@@ -1,7 +1,4 @@
 ##  EasyInstall Unitystation-Hub For Gnu_linux
-[TOCM]
-
-[TOC]
 
 ### Languages utilisés
 
