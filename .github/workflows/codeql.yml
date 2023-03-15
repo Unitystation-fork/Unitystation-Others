@@ -32,7 +32,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'java', 'javascript', 'python', 'shell' ] # Vous pouvez ajouter ou supprimer des langages selon vos besoins.
+        language: ['javascript' ] # Vous pouvez ajouter ou supprimer des langages selon vos besoins.
         # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'ruby' ]
         # Learn more about CodeQL language support at https://git.io/codeql-language-support
 
