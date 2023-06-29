@@ -10,7 +10,7 @@
     Download the zip file containing the scene.
     Place the zip in the folder %USERPROFILE%\image\OBS\. If the folder doesn't exist, create it in a case-sensitive way.
     Unzip the zip with a right click "extract here" (for example with 7zip). 
-    You should have a folder named "UnityStation-Scene".
+    You should have a folder named "Scene-UnityStation".
 
 === Introduction ===
 
