@@ -46,7 +46,8 @@ Si la version du Hub change, il faudra de nouveau executer ce script shell.
 ### Uninstall
 merci de copier coller le texte suivant dans votre terminal
 ```shell
-wget -O ~/UnitystationUnInstaller.sh https://raw.githubusercontent.com/Unitystation-fork/Unitystation-Others/main/Installation-Script/UnityStationUnInstaller.sh ; sudo chmod 750 ~/UnityStationUnInstaller.sh; sudo ~/UnityStationUnInstaller.sh
-```
+wget -O ~/UnitystationUnInstaller.sh https://raw.githubusercontent.com/Unitystation-fork/Unitystation-Others/main/Installation-Script/UnitystationUnInstaller.sh ; sudo chmod 750 ~/UnityStationUnInstaller.sh; sudo ~/UnityStationUnInstaller.sh
+```	
+									 
 
 -------------
