@@ -1,3 +1,16 @@
+Version 0.0.3
+Date: 11/10/2023 - 8h
+Dev: Fr-Dae
+
+Fix: 
+	
+	- Sources of the installer for Linux dekstop
+Ajout:
+	
+	- Sources de l'installateur pour Linux bureau
+
+---------------------------------------------------------------------------------------------
+
 Version 0.0.2
 Date: 25/02/2022 - 19h
 Dev: Peulleieo
