@@ -1,3 +1,12 @@
+Version 0.0.4
+Date: 11/10/2023 - 14h
+Dev: Fr-Dae
+
+Fix: 
+	
+	- Multi OS manage
+	- fr/en instruction
+---------------------------------------------------------------------------------------------
 Version 0.0.3
 Date: 11/10/2023 - 8h
 Dev: Fr-Dae
@@ -5,9 +14,6 @@ Dev: Fr-Dae
 Fix: 
 	
 	- Sources of the installer for Linux dekstop
-Ajout:
-	
-	- Sources de l'installateur pour Linux bureau
 
 ---------------------------------------------------------------------------------------------
 

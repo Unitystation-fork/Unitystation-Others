@@ -35,6 +35,8 @@ Open terminal
 ```shell
 wget https://raw.githubusercontent.com/Unitystation-fork/Unitystation-Others/main/Installation-Script/UnityStationInstaller.sh -O ~/UnityStationInstaller.sh; sudo chmod 750 ~/UnityStationInstaller.sh; sudo ~/UnityStationInstaller.sh
 ```
+*For no debian user, please remplacer "sudo" by your own command*
+
 
 -------------
 ### Upgrading
@@ -43,8 +45,10 @@ Once installed, the hub will update to the latest build.
 If the Hub version changes, you will need to run this shell script again.
 
 ---
-### ToDo
-
-Todo.md
+### Uninstall
+please copy past this on your terminal Open terminal
+```shell
+wget -O ~/UnitystationUnInstaller.sh https://raw.githubusercontent.com/Unitystation-fork/Unitystation-Others/main/Installation-Script/UnityStationUnInstaller.sh ; sudo chmod 750 ~/UnityStationUnInstaller.sh; sudo ~/UnityStationUnInstaller.sh
+```
 
 -------------
