@@ -35,7 +35,7 @@ Ce projet s'adresse aux développeurs, aux utilisateurs individuels et à toute 
 Pour installer Deepl-Trad, suivez ces étapes :
 
 1. sudo apt update ; sudo apt full-upgrade ; sudo apt install python3 ; sudo apt autoremove
-1. `mkdir -p ~/.config/Deepl/ && mkdir -p ~/Deepl/ && wget -O ~/Deepl/Deepl-Trad.py <lien_vers_le_script> && touch ~/.config/Deepl/Key.txt && touch ~/.config/Deepl/Deepl-Compteur.txt`
+1. `mkdir -p ~/.config/Deepl/ && mkdir -p ~/Deepl/ && wget -O ~/Deepl/Deepl-Trad.py https://raw.githubusercontent.com/Unitystation-fork/Unitystation-Others/main/Deepl-Trad/Deepl-trad.py && touch ~/.config/Deepl/Key.txt && touch ~/.config/Deepl/Deepl-Compteur.txt`
 3. `pip install deepl`
 4. Modifier le fichier `~/.config/Deepl/Key.txt` (avec nano ou geany)
 
