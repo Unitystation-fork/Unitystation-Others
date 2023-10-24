@@ -3,20 +3,39 @@
 import re
 import sys
 import os
+import readline
 
+def main():
+	input_path = sys.argv[1] if len(sys.argv) > 1 else None
+	output_path = sys.argv[2] if len(sys.argv) > 2 else None
+
+	if input_path is None:
+		input_path = input("\033[93mEntrez le chemin du fichier ou du dossier d'entrée : \033[0m")
+
+	if not output_path:
+		output_path = input("\033[93mEntrez le chemin du dossier de sortie : \033[0m")
+
+	if os.path.isfile(input_path):
+		convert_file(input_path, os.path.join(output_path, os.path.basename(input_path).replace(".wiki", ".md")))
+	elif os.path.isdir(input_path):
+		convert_files_in_directory(input_path, output_path)
+	else:
+		print("Chemin d'entrée non valide.")
+		
 def convert_wikicode_to_markdown(wikicode):
 	# Convertir les en-têtes
-	wikicode = re.sub(r'==(.*?)==', r'# \1', wikicode)
-	wikicode = re.sub(r'===(.*?)===', r'## \1', wikicode)
-	wikicode = re.sub(r'====(.*?)====', r'### \1', wikicode)
-	wikicode = re.sub(r'=====(.*?)=====', r'#### \1', wikicode)
-	wikicode = re.sub(r'======(.*?)======', r'##### \1', wikicode)
-	wikicode = re.sub(r'=======(.*?)=======', r'###### \1', wikicode)
 
+	wikicode = re.sub(r'=======(.*?)=======', r'###### \1', wikicode)
+	wikicode = re.sub(r'======(.*?)======', r'##### \1', wikicode)
+	wikicode = re.sub(r'=====(.*?)=====', r'#### \1', wikicode)
+	wikicode = re.sub(r'====(.*?)====', r'### \1', wikicode)
+	wikicode = re.sub(r'===(.*?)===', r'## \1', wikicode)
+	wikicode = re.sub(r'==(.*?)==', r'# \1', wikicode)
+		
 	# Convertir les listes à puces
 	wikicode = re.sub(r'^\* ', r'* ', wikicode, flags=re.MULTILINE)
 	# Convertir les listes numérotées
-	wikicode = re.sub(r'^# ', r'1. ', wikicode, flags=re.MULTILINE)
+#	wikicode = re.sub(r'^# ', r'1. ', wikicode, flags=re.MULTILINE)
 	
 	# Convertir les liens
 	wikicode = re.sub(r'\[\[([^\]]+?)\]\]', r'[\1](\1)', wikicode)
@@ -45,11 +64,11 @@ def convert_wikicode_to_markdown(wikicode):
 	# Convertir les balises de texte préformaté en balises de code Markdown
 	wikicode = re.sub(r'<pre>(.*?)</pre>', r'```\1```', wikicode)
 
-	# Convertir les tables (exemples simples)
-	wikicode = re.sub(r'{|', r'\n| ', wikicode)
-	wikicode = re.sub(r'|}', r' |', wikicode)
-	wikicode = re.sub(r'|-', r'\n|', wikicode)
-	wikicode = re.sub(r'!', r'|', wikicode)
+#	# Convertir les tables (exemples simples)
+#	wikicode = re.sub(r'{|', r'\n| ', wikicode)
+#	wikicode = re.sub(r'|}', r' |', wikicode)
+#	wikicode = re.sub(r'|-', r'\n|', wikicode)
+#	wikicode = re.sub(r'!', r'|', wikicode)
 
 	return wikicode
 
@@ -57,7 +76,6 @@ def convert_file(input_file, output_file):
 	try:
 		with open(input_file, 'r', encoding='utf-8') as file:
 			wikicode_text = file.read()
-
 		markdown_text = convert_wikicode_to_markdown(wikicode_text)
 
 		with open(output_file, 'w', encoding='utf-8') as file:
@@ -73,12 +91,12 @@ def convert_files_in_directory(input_directory, output_directory):
 	if not os.path.exists(output_directory):
 		os.makedirs(output_directory)
 
-	for filename in os.listdir(input_directory):
-		if filename.endswith(".wiki"):
-			input_file = os.path.join(input_directory, filename)
-			output_file = os.path.join(output_directory, filename.replace(".wiki", ".md"))
-
-			convert_file(input_file, output_file)
+	for root, _, files in os.walk(input_directory):
+		for filename in files:
+			if filename.endswith(".wiki"):
+				input_file = os.path.join(root, filename)
+				output_file = os.path.join(output_directory, filename.replace(".wiki", ".md"))
+				convert_file(input_file, output_file)
 
 if __name__ == "__main__":
 	main()
