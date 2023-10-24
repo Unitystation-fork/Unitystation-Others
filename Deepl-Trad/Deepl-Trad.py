@@ -5,21 +5,22 @@ import deepl
 import json
 import subprocess
 import sys
+import re
 
 # Listes des couleur
 
 def colored_text(text, color_code):
     return f"\033[{color_code}{text}\033[0m"
 
-print(colored_text("Texte en Gris", "90m"))
-print(colored_text("Texte en Rouge")"91m")
-print(colored_text("Texte en Vert", "92m"))
-print(colored_text("Texte en Jaune", "93m"))
-
-print(colored_text("Texte en Bleu", "94m"))
-print(colored_text("Texte en Violet", "95m"))
-print(colored_text("Texte en Cyan", "96m"))
-print(colored_text("Texte en Blanc", "97m"))
+# print(colored_text("Texte en Gris", "90m"))
+# print(colored_text("Texte en Rouge", "91m"))
+# print(colored_text("Texte en Vert", "92m"))
+# print(colored_text("Texte en Jaune", "93m"))
+# 
+# print(colored_text("Texte en Bleu", "94m"))
+# print(colored_text("Texte en Violet", "95m"))
+# print(colored_text("Texte en Cyan", "96m"))
+# print(colored_text("Texte en Blanc", "97m"))
 
 # Fonction pour récupérer la valeur du compteur de caractères
 def get_character_count(count_file):
@@ -57,7 +58,7 @@ def translate_file(input_file, source_lang, target_lang, auth_key, count_file, s
         file_name, _ = os.path.splitext(os.path.basename(input_file))
 
         # Créer le chemin du répertoire de résultat
-        result_dir = '~/Deepl/Result'
+        result_dir = os.path.expanduser('~/Deepl/Result')
         os.makedirs(result_dir, exist_ok=True)  # Créer le répertoire s'il n'existe pas
 
         # Créer le nom du fichier traduit
@@ -77,13 +78,13 @@ def translate_file(input_file, source_lang, target_lang, auth_key, count_file, s
         print(result.stdout)
 
         # Affiche la sortie d'erreur standard (stderr) de la commande
-        print(colored_text("Erreur de la commande Shell:")"91m")
+        print(colored_text("Erreur de la commande Shell:", "91m"))
         print(result.stderr)
         
         print("Nombre de caractères utilisés:", character_count)
         print("Nombre de caractères restants:", current_character_count)
     else:
-        print(colored_text("Le nombre de caractères restants est insuffisant pour la traduction.")"91m")
+        print(colored_text("Le nombre de caractères restants est insuffisant pour la traduction.", "91m"))
         print("Nombre de caractères nécessaires:", character_count)
         print("Nombre de caractères disponibles:", current_character_count)
 
@@ -95,8 +96,8 @@ def main():
         with open(deepl_api_key_path, 'r') as f:
             DEEPL_AUTH_KEY = f.read().strip()
     else:
-        print(colored_text("Erreur : Le fichier Key.txt est introuvable dans ~/.config/Deepl/")"91m")
-        print(colored_text("Veuillez créer un fichier Key.txt dans ce répertoire avec votre clé API DeepL.")"91m")
+        print(colored_text("Erreur : Le fichier Key.txt est introuvable dans ~/.config/Deepl/", "91m"))
+        print(colored_text("Veuillez créer un fichier Key.txt dans ce répertoire avec votre clé API DeepL.", "91m"))
         return  # Arrêter le script en cas d'erreur
 
     # Chemin du fichier de compteur
@@ -108,18 +109,18 @@ def main():
     # Demander la langue source
     # source_lang = input("Langue source (par exemple, FR, EN, DE) : ")
     source_lang_prompt = "Langue source (par exemple, FR, EN, DE) : "
-    source_lang_prompt = re.sub(r'\bsource\b', colored_text('source', '93m'), source_lang_prompt)
+    source_lang_prompt = re.sub(r'\bsource\b', colored_text('source','93m'), source_lang_prompt)
     source_lang = input(source_lang_prompt)
 
     # Demander la langue cible
     # target_lang = input("Langue cible (par exemple, FR, EN, DE) : ")
     target_lang_prompt = "Langue cible (par exemple, FR, EN, DE) : "
-    target_lang_prompt = re.sub(r'\bcible\b', colored_text('cible', '93m'), target_lang_prompt)
+    target_lang_prompt = re.sub(r'\bcible\b', colored_text('cible','93m'), target_lang_prompt)
     target_lang = input(target_lang_prompt)
     
     # Passer en revue les fichiers dans le répertoire ou traiter le fichier d'entrée
     input_path_prompt = "Entrez le chemin vers le fichier ou le répertoire INPUT : "
-    input_path_prompt = re.sub(r'\bINPUT\b', colored_text('INPUT', '91m'), input_path_prompt)
+    input_path_prompt = re.sub(r'\bINPUT\b', colored_text('INPUT','91m'), input_path_prompt)
     input_path = input(input_path_prompt)
 
     if os.path.isfile(input_path):
@@ -132,7 +133,7 @@ def main():
                 if file.endswith(".md"):
                     translate_file(os.path.join(root, file), source_lang, target_lang, DEEPL_AUTH_KEY, count_file, shell_script)
     else:
-        print(colored_text("Le chemin spécifié n'existe pas.")"91m")
+        print(colored_text("Le chemin spécifié n'existe pas.", "91m"))
 
 if __name__ == "__main__":
     main()
