@@ -35,7 +35,7 @@ Ce projet s'adresse aux développeurs, aux utilisateurs individuels et à toute 
 Pour installer Deepl-Trad, suivez ces étapes :
 
 1. sudo apt update ; sudo apt full-upgrade ; sudo apt install python3 ; sudo apt autoremove
-1. `mkdir -p ~/.config/Deepl/ && mkdir -p ~/Deepl/ && wget -O ~/Deepl/Deepl-Trad.py https://raw.githubusercontent.com/Unitystation-fork/Unitystation-Others/main/Deepl-Trad/Deepl-trad.py && touch ~/.config/Deepl/Key.txt && touch ~/.config/Deepl/Deepl-Compteur.txt`
+1. `mkdir -p ~/.config/Deepl/ && mkdir -p ~/.config/Deepl/Result/ && mkdir -p ~/Deepl/ && wget -O ~/Deepl/Deepl-Trad.py https://raw.githubusercontent.com/Unitystation-fork/Unitystation-Others/main/Deepl-Trad/Deepl-trad.py && touch ~/.config/Deepl/Key.txt && touch ~/.config/Deepl/Deepl-Compteur.txt`
 3. `pip install deepl`
 4. Modifier le fichier `~/.config/Deepl/Key.txt` (avec nano ou geany)
 
@@ -43,10 +43,6 @@ Pour installer Deepl-Trad, suivez ces étapes :
 
 ### Mise à jour
 
-Pour mettre à jour Deepl-Trad vers la dernière version, suivez ces étapes :
-
-1. Récupérez la dernière version du référentiel.
-2. Mettez à jour les dépendances en exécutant `pip install -r requirements.txt`.
 
 -------------
 
@@ -58,6 +54,7 @@ Pour utiliser Deepl-Trad, exécutez le script avec les commandes suivantes :
 - Pour traduire un répertoire : `python Deepl-Trad.py ./Dossier/`
 
 Le résultat sera enregistré dans des fichiers avec le format "Nom_Lang.md", où "Nom" est le nom du fichier ou du répertoire d'origine, et "Lang" est la langue choisie.
+`~/Deepl/Result/`
 
 ---
 
