@@ -72,56 +72,8 @@ Le script `Wiki2MD.py` est l'outil principal pour la conversion de contenu Wikim
 ### Installation
 Pour installer Wiki2MD, suivez ces étapes :
 
-1. Clonez le dépôt GitHub :
-
 ```bash
-git clone https://github.com/votre-utilisateur/Wiki2MD.git```
-Voici le fichier README.md avec les informations complétées :
-
-markdown
-
-[![forthebadge cc-by](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by/4.0) [![](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/tyJX8dx)
-
-## Wiki2MD - Convertisseur de Wikimedia à Markdown
-
-### Langage utilisé
-Python
-
----
-
-### Description du projet
-Wiki2MD est un outil de ligne de commande qui permet de convertir des pages Wikimedia (wikicode) en fichiers Markdown. Cet outil facilite la conversion de contenu Wikimedia en Markdown pour une utilisation dans la documentation, les pages web et d'autres applications.
-
----
-
-### Crédits, Participants, Organisation
-Projet géré par l'équipe de développement d'Unionrolistes.
-
-**Contributeurs** :
-- [Nom du Contributeur 1](Credit.md)
-- [Nom du Contributeur 2](Credit.md)
-- ...
-
-**Licence** : [Licence](Licence.md)
-
----
-
-### Objectif du projet / Public cible
-#### Extract.py
-Le script `Extract.py` permet de télécharger le contenu d'une page Wikimedia spécifiée par l'utilisateur et de le convertir en fichier Markdown.
-
-#### Wiki2MD.py
-Le script `Wiki2MD.py` est l'outil principal pour la conversion de contenu Wikimedia en Markdown. Il offre des fonctionnalités avancées pour gérer la conversion de fichiers individuels ou de répertoires entiers de contenu Wikimedia.
-
----
-
-### Installation
-Pour installer Wiki2MD, suivez ces étapes :
-
-1. Clonez le dépôt GitHub :
-
-```bash
-git clone https://github.com/votre-utilisateur/Wiki2MD.git
+mkdir ~/Wiki2MD && wget https://raw.githubusercontent.com/Unitystation-fork/Unitystation-Others/main/Wikimedia-to-Markdown/Extract.py -O ~/Wiki2MD/Extract.py && wget https://raw.githubusercontent.com/Unitystation-fork/Unitystation-Others/main/Wikimedia-to-Markdown/Wiki2MD.py -O ~/Wiki2MD/Wiki2MD.py
 ```
 
 ### Utilisation
