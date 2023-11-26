@@ -56,6 +56,8 @@ Pour utiliser Deepl-Trad, exécutez le script avec les commandes suivantes :
 Le résultat sera enregistré dans des fichiers avec le format "Nom_Lang.md", où "Nom" est le nom du fichier ou du répertoire d'origine, et "Lang" est la langue choisie.
 `~/Deepl/Result/`
 
+Attention! respecter la norme [ISO 639-1](https://fr.wikipedia.org/wiki/Liste_des_codes_ISO_639-1)
+
 ---
 
 ### Comment contribuer
